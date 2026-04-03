@@ -1,0 +1,16 @@
+{ 
+ "cotxe" : {
+
+    "marca" : "toyota",
+    "model" : {
+       "tipus" : "sedan"
+    }
+    ,
+    "any" : 2022,
+    "preu" : {
+        "moneda" : "EUR",
+        "valor" : 25000
+    } 
+}
+}
+

@@ -126,6 +126,7 @@ html, body{
     font-size: 1.8em;
     text-align: left;
     margin-bottom: 20px;
+    margin-left: 150px;
 }
 
 .box {
@@ -225,7 +226,7 @@ html, body{
 .item9 { grid-area: item9; }
 
 
-.item1, .item6 {
+.item1{
     text-align: center;
     font-size: 1.8em;
     font-weight: bold;
@@ -234,7 +235,7 @@ html, body{
     border-radius: 10px;
 }
 
-.item2 {
+.item2, .item6 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,6 +257,36 @@ html, body{
     justify-content: center;
     align-items: center;
 }
+
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.galeria-container img {
+    width: 250px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.fosca {
+    filter: brightness(50%);
+}
+
+
+.galeria-container img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    filter: brightness(50%);
+}
+
+
 
 .reserva {
     width: 50%;

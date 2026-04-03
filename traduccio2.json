@@ -1,0 +1,21 @@
+{
+ "classe" : {
+    "alumne" : [ 
+    {
+        "matricula" : "A123",
+        "edat" : 22
+    } 
+    ,
+    {
+        "matricula" : "B458",
+        "edat" : 21
+    } 
+    ] 
+    ,
+    "professora" : {
+        "departament" : "matematiques",
+        "nom" : "raquel martinez"
+    }
+
+}
+}

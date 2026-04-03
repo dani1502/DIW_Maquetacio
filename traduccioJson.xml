@@ -1,0 +1,24 @@
+<fonts>
+   <font>
+    <nom>Robot</nom>
+    <mida>14</mida>
+    <estil>Normal</estil>
+   </font>
+   <font>
+    <nom>Mono</nom>
+    <mida>12</mida>
+    <estil>Negreta</estil>
+   </font>
+</fonts>
+<movil>
+    <idioma>Catala</idioma>
+    <tema>Fosc</fosc>
+    <notificacions>
+        <activades>true</activades>
+        <to>Predeterminat</to>
+    </notificacions>
+    <preferencies>
+        <mostra_publicitat>false</mostra_publicitat>
+        <ordre_menu>perfil, </ordre_menu>
+    </preferencies>
+</movil>
