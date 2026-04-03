@@ -1,3 +1,4 @@
+/* RESET BÀSIC DE LA PÀGINA */
 html, body{
     margin: 0;
     padding: 0;
@@ -5,17 +6,18 @@ html, body{
     font-size: 1em;
 }
 
+/* MENÚ DE NAVEGACIÓ */
 .menu{
-    display: flex;
+    display: flex; /* Flexbox per alinear elements */
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Elements a la dreta */
     gap: 30px;
     background-color: black;
-    position: fixed;
+    position: fixed; /* Fixat a la part superior */
     padding: 20px;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Prioritat visual */
 }
 
 .elemnav {
@@ -23,24 +25,27 @@ html, body{
     margin-inline: 25px;
     font-size: 0.8em;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s; /* Animació suau */
 }
 
+/* EFECTE HOVER DEL MENÚ */
 .elemnav:hover{
     text-decoration: underline;
     color: #c59d5f;
 }
 
+/* HEADER */
 .header_main {
-    position: relative;
+    position: relative; /* Per posicionar textos a sobre */
 }
 
 .header_main img {
     width: 100%;
     height: 500px;
-    object-fit: cover;
+    object-fit: cover; /* Ajusta la imatge */
 }
 
+/* TEXTOS SOBRE LA IMATGE */
 .center{
     position: absolute;
     top: 45%;
@@ -69,28 +74,31 @@ html, body{
     color: #ffffff;
 }
 
+/* CONTINGUT PRINCIPAL */
 .main {
-    margin-top: 120px;
+    margin-top: 120px; /* Espai pel menú fix */
 }
 
+/* FOOTER */
 .footer {
     display: flex;
     justify-content: space-between; 
     align-items: center;
     background-color: black;
-    position: fixed;
+    position: fixed; /* Fixat a baix */
     padding: 10px 20px;
     width: 100%;
     bottom: 0;
 }
 
-
+/* PART ESQUERRA DEL FOOTER */
 .footer-left {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+/* ICONES I TEXT FOOTER */
 .material-icons, .elemfooter {
     font-size: 0.8em;
     color: white;
@@ -101,12 +109,13 @@ html, body{
     align-items: center;
 }
 
-
+/* LOGO FOOTER */
 .logo-footer {
     height: 40px;
     object-fit: contain;
 }
 
+/* TEXT GENERAL */
 .text {
     width: 100%;
     text-align: center;
@@ -114,12 +123,14 @@ html, body{
     color: #c59d5f;
 }
 
+/* SECCIÓ SOBRE NOSALTRES */
 .sobrenosaltres {
     max-width: 900px;
     margin: 0 auto;
     overflow: hidden;
 }
 
+/* TÍTOLS */
 .titol {
     color: black;
     font-weight: bold;
@@ -129,6 +140,7 @@ html, body{
     margin-left: 150px;
 }
 
+/* CONTENIDORS */
 .box {
     float: left;
     width: 48%;
@@ -137,6 +149,7 @@ html, body{
     box-sizing: border-box;
 }
 
+/* IMATGES */
 .box img {
     width: 100%;
     height: auto;
@@ -145,10 +158,12 @@ html, body{
     transition: transform 0.3s;
 }
 
+/* EFECTE HOVER IMATGES */
 .box img:hover {
     transform: scale(1.05);
 }
 
+/* TEXTOS */
 .texto1, .texto2 {
     width: 100%;
     text-align: left;
@@ -165,20 +180,24 @@ html, body{
     font-size: 0.8em;
 }
 
+/* CONFIGURACIÓ GLOBAL */
 * {box-sizing: border-box}
 
+/* CONTENIDOR IMATGE CARTA */
 .container {
     position: relative;
     width: 100%;
     max-width: 250px;
 }
 
+/* IMATGE CARTA */
 .imagecarta {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
+/* OVERLAY DE TEXT */
 .overlay {
     position: absolute;
     bottom: 0;
@@ -188,15 +207,17 @@ html, body{
     text-align: center;
     font-size: 1.2em;
     padding: 10px;
-    opacity: 0;
+    opacity: 0; /* Inicialment ocult */
     transition: 0.5s;
     border-radius: 10px;
 }
 
+/* MOSTRAR OVERLAY AL PASSAR RATOLÍ */
 .container:hover .overlay {
   opacity: 1;
 }
 
+/* GRID DE LA CARTA */
 .carta {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -214,7 +235,7 @@ html, body{
     padding: 20px;
 }
 
-
+/* ASSIGNACIÓ ÀREES GRID */
 .item1 { grid-area: item1; }
 .item2 { grid-area: item2; }
 .item3 { grid-area: item3; }
@@ -225,7 +246,7 @@ html, body{
 .item8 { grid-area: item8; }
 .item9 { grid-area: item9; }
 
-
+/* ESTILS ITEMS */
 .item1{
     text-align: center;
     font-size: 1.8em;
@@ -258,6 +279,7 @@ html, body{
     align-items: center;
 }
 
+/* GALERIA */
 .galeria-container {
     display: flex;
     flex-wrap: wrap;
@@ -276,18 +298,18 @@ html, body{
     transition: 0.3s;
 }
 
+/* EFECTE IMATGE FOSCA */
 .fosca {
     filter: brightness(50%);
 }
 
-
+/* HOVER GALERIA */
 .galeria-container img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
     filter: brightness(50%);
 }
 
-
-
+/* FORMULARI DE RESERVA */
 .reserva {
     width: 50%;
     margin: 50px auto;
@@ -303,16 +325,19 @@ html, body{
     margin-bottom: 20px;
 }
 
+/* GRUPS DEL FORMULARI */
 .form-group {
     margin-bottom: 15px;
 }
 
+/* ETIQUETES */
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
+/* INPUTS */
 input, textarea, select {
     width: 100%;
     padding: 10px;
@@ -321,21 +346,25 @@ input, textarea, select {
     transition: 0.3s;
 }
 
+/* FOCUS INPUTS */
 input:focus, textarea:focus {
     border-color: #c59d5f;
     outline: none;
 }
 
+/* TEXTAREA */
 textarea {
     height: 80px;
 }
 
+/* BOTÓ RESERVA */
 .boto-reserva {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
 }
 
+/* BOTÓ */
 button {
     background-color: black;
     color: white;
@@ -346,6 +375,7 @@ button {
     transition: 0.3s;
 }
 
+/* HOVER BOTÓ */
 button:hover {
     background-color: #c59d5f;
     color: black;

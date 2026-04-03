@@ -1,75 +1,122 @@
 <!DOCTYPE html>
+<!-- Declaració del tipus de document HTML5 -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Codificació de caràcters -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fa que la pàgina sigui responsive en dispositius mòbils -->
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Importació d'icones de Google Material Icons -->
+
     <link rel="stylesheet" href="../CSS/restaurant.css">
+    <!-- Enllaç al fitxer CSS extern -->
+
     <title>Restaurant els Coberts</title>
+    <!-- Títol de la pàgina -->
 </head>
+
 <body>
+
+    <!-- MENÚ DE NAVEGACIÓ -->
     <nav class="menu">
          <div class="elemnav">Nosaltres</div>
          <div class="elemnav">Carta</div>
          <div class="elemnav">Galeria</div>
     </nav>
+
+    <!-- CAPÇALERA PRINCIPAL AMB IMATGE I TEXT -->
     <header class="header_main">
         <img src="../IMG/headerimg.jpg" alt="Taules a la terrassa del restaurant">
-        <p class="center">Restaurant</p><p class="center2">els coberts</p><p class="center3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        
+        <!-- Textos superposats a la imatge -->
+        <p class="center">Restaurant</p>
+        <p class="center2">els coberts</p>
+        <p class="center3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
     <main class="main">
+
+        <!-- SECCIÓ SOBRE NOSALTRES -->
         <div class="sobrenosaltres">
             <p class="titol">Sobre nosaltres</p>
+
+            <!-- Primera fila: imatge + text -->
             <div class="box">
                 <img src="../IMG/sobrenosaltres1.jpg" alt="Interior del restaurant">
-                <div class="texto1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, veniam quasi, ratione tenetur quis, expedita nulla nobis provident inventore corporis quibusdam obcaecati voluptates perferendis et ipsam quae. Laboriosam, blanditiis vitae?</div>
+                <div class="texto1">Lorem ipsum...</div>
             </div>
+
+            <!-- Segona fila: text + imatge (invertit) -->
             <div class="box">
-                <div class="texto2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, veniam quasi, ratione tenetur quis, expedita nulla nobis provident inventore corporis quibusdam obcaecati voluptates perferendis et ipsam quae. Laboriosam, blanditiis vitae?</div>
+                <div class="texto2">Lorem ipsum...</div>
                 <img src="../IMG/sobrenosaltres2.jpg" alt="Interior del restaurant">
             </div>
         </div>
+
+        <!-- SECCIÓ CARTA -->
         <p class="titol">Carta</p>
+
         <div class="carta">
+
+            <!-- Títols i contingut del menú -->
             <div class="item1">Menú</div>
             <div class="item2">Menú 1</div>
+
             <div class="item3">
                 <h2>Contingut</h2>
-                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid veritatis asperiores repellat odit dolor, accusamus corrupti expedita ipsum minus iusto. Cupiditate ducimus et tempore quos recusandae tenetur soluta cumque tempora?</h3>
+                <h3>Lorem ipsum...</h3>
             </div>
+
+            <!-- Imatges amb efecte overlay -->
             <div class="item4">
                 <div class="container">
                     <img src="../IMG/pasta.jpg" alt="Espaguethis" class="imagecarta">
                     <p class="overlay">Pasta</p>
                 </div>
             </div>
+
             <div class="item5">
                 <div class="container">
                     <img src="../IMG/entrants.jpg" alt="Tostades" class="imagecarta">
                     <p class="overlay">Entrants</p>
                 </div>
             </div>
+
+            <!-- Segon menú -->
             <div class="item6">Menú 2</div>
+
             <div class="item7">
                 <h2>Contingut</h2>
-                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid veritatis asperiores repellat odit dolor, accusamus corrupti expedita ipsum minus iusto. Cupiditate ducimus et tempore quos recusandae tenetur soluta cumque tempora?</h3>
+                <h3>Lorem ipsum...</h3>
             </div>
+
             <div class="item8">
                 <div class="container">
                     <img src="../IMG/carn.jpg" alt="Carn a la brasa" class="imagecarta">
                     <p class="overlay">Carn</p>
                 </div>
             </div>
+
             <div class="item9">
                 <div class="container">
                     <img src="../IMG/peix.jpg" alt="Daurada" class="imagecarta">
                     <p class="overlay">Peix</p>
                 </div>
             </div>
+
         </div>
+
+        <!-- GALERIA D'IMATGES -->
         <section class="galeria">
             <p class="titol">Galeria d'imatges</p>
+
             <div class="galeria-container">
+                <!-- Imatges, algunes amb classe "fosca" per efecte visual -->
                 <img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca">
                 <img src="../IMG/amanida.jpg" alt="Plat d'amanida">
                 <img src="../IMG/amanida.jpg" alt="Plat d'amanida">
@@ -80,45 +127,69 @@
                 <img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca">
             </div>
         </section>
+
     </main>
+
+    <!-- SECCIÓ DE RESERVA -->
     <section class="reserva">
         <h2>Fes la teva reserva</h2>
+
         <form action="#" method="POST">
+
+            <!-- Camp nom -->
             <div class="form-group">
                 <label for="nom">Nom:</label>
                 <input type="text" id="nom" name="nom" required>
             </div>
+
+            <!-- Número de persones -->
             <div class="form-group">
                 <label for="persones">Número de persones:</label>
                 <input type="number" id="persones" name="persones" min="1" required>
             </div>
+
+            <!-- Data -->
             <div class="form-group">
                 <label for="data">Data:</label>
                 <input type="date" id="data" name="data" required>
             </div>
+
+            <!-- Hora -->
             <div class="form-group">
                 <label for="hora">Hora:</label>
                 <input type="time" id="hora" name="hora" required>
             </div>
+
+            <!-- Descripció -->
             <div class="form-group">
                 <label for="descripcio">Descripció:</label>
                 <textarea id="descripcio" name="descripcio"></textarea>
             </div>
+
+            <!-- Botó de reserva -->
             <div class="boto-reserva">
                 <button type="submit">Reservar</button>
             </div>
+
         </form>
     </section>
-    
+
+    <!-- PEU DE PÀGINA -->
     <footer class="footer">
+
+        <!-- Informació de contacte -->
         <div class="footer-left">
             <i class="material-icons">mail</i>
             <div class="elemfooter">restcoberts@gmail.com</div>
+
             <i class="material-icons">phone</i>
             <div class="elemfooter">999 999 999</div>
         </div>
 
+        <!-- Logotip -->
         <img src="../IMG/logo.png" class="logo-footer">
+
     </footer>
+
 </body>
 </html>
