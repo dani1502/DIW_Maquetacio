@@ -142,11 +142,9 @@ html, body{
 
 /* CONTENIDORS */
 .box {
-    float: left;
-    width: 48%;
-    margin: 1%;
-    padding: 20px;
-    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 /* IMATGES */
@@ -379,4 +377,178 @@ button {
 button:hover {
     background-color: #c59d5f;
     color: black;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+
+    /* Peu de pàgina centrat en pantalles mitjanes */
+    .footer {
+        justify-content: center; /* Centra els elements horitzontalment */
+        text-align: center; /* Centra el text */
+    }
+
+    /* Part esquerra del footer: centrat i amb salts de línia */
+    .footer-left {
+        justify-content: center;
+        flex-wrap: wrap; /* Permet que els elements baixin de línia */
+    }
+
+    /* Oculta el logo del footer en dispositius petits */
+    .logo-footer {
+        display: none;
+    }
+
+    /* Galeria: dues imatges per fila aproximadament */
+    .galeria-container img {
+        width: calc((100% - 15px) / 2);
+    }
+
+    /* Menú centrat en tablets */
+    .menu {
+        justify-content: center;
+    }
+
+    /* Text sobre la imatge principal centrat */
+    .center,
+    .center2,
+    .center3 {
+        left: 50%;
+        text-align: center;
+        width: 80%;
+    }
+
+    /* Ajust de mida i posició dels textos del header */
+    .center {
+        font-size: 1.5em;
+        top: 40%;
+    }
+
+    .center2 {
+        font-size: 2.2em;
+        top: 50%;
+    }
+
+    .center3 {
+        font-size: 1em;
+        top: 60%;
+    }
+
+    /* Primera caixa en format columna (imatge + text vertical) */
+    .box:first-of-type {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Imatge de la primera caixa a amplada completa */
+    .box:first-of-type img {
+        width: 100%;
+    }
+
+    /* Text de la primera caixa a amplada completa */
+    .box:first-of-type .texto1 {
+        width: 100%;
+    }
+
+    /* SECCIÓ CARTA: layout adaptat a 768px */
+    .carta {
+        grid-template-columns: repeat(6, 1fr); /* Configuració de columnes */
+        grid-template-areas:
+            "item1 item1 item1 item1"
+            "item2 item3 item3 item3"
+            "item2 item4 item4 item4"
+            "item2 item5 item5 item5"
+            "item6 item7 item7 item7"
+            "item6 item8 item8 item8"
+            "item6 item9 item9 item9";
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+}
+@media (max-width: 576px) {
+
+    /* Galeria: una imatge per fila */
+    .galeria-container img {
+        width: 100%;
+    }
+
+    /* Menú en columna (estil mòbil) */
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Amaga els textos del header en mòbil */
+    .center, .center2, .center3 {
+        display: none;
+    }
+
+    /* Cada box ocupa tota l’amplada */
+    .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Textos a mida més petita */
+    .texto1,
+    .texto2 {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    /* Imatge de la box adaptada */
+    .box img {
+        width: 100%;
+    }
+
+    /* Inverteix ordre de la segona box (imatge a dalt) */
+    .box:nth-of-type(2) img {
+        order: -1;
+    }
+
+    /* Oculta el títol de la carta */
+    .item1 {
+        display: none;
+    }
+
+    /* CARTA: tot en una sola columna */
+    .carta {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7"
+            "item8"
+            "item9";
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Contenidor de les imatges de la carta a amplada completa */
+    .container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Imatge dins la carta a mida completa */
+    .imagecarta {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Assegura que aquestes caixes ocupin tota l’amplada */
+    .item4, .item5, .item8, .item9 {
+        width: 100%;
+    }
 }
