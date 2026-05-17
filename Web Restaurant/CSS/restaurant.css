@@ -73,6 +73,59 @@ html, body{
     font-size: 1.2em;
     color: #ffffff;
 }
+/* ANIMACIONS DELS TEXTOS DE LA CAPÇALERA */
+
+/* Primer text */
+.center {
+    animation: animacioText 2s forwards;
+}
+
+/* Títol principal */
+.center2 {
+    animation: animacioText 3s forwards;
+}
+
+/* Subtítol */
+.center3 {
+    animation: animacioText 4s forwards;
+}
+
+/* KEYFRAMES */
+/* L'animació:
+   - el text apareix progressivament
+   - puja cap amunt
+   - canvia de taronja a blanc
+*/
+@keyframes animacioText {
+
+    /* Inicialment invisible */
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+        color: orange;
+    }
+
+    /* El text comença a aparèixer */
+    30% {
+        opacity: 0.4;
+        transform: translate(-50%, 0px);
+        color: #ffb347;
+    }
+
+    /* Continua pujant i canviant color */
+    70% {
+        opacity: 0.8;
+        transform: translate(-50%, -10px);
+        color: #ffd27f;
+    }
+
+    /* Estat final */
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -20px);
+        color: white;
+    }
+}
 
 /* CONTINGUT PRINCIPAL */
 .main {
@@ -142,11 +195,9 @@ html, body{
 
 /* CONTENIDORS */
 .box {
-    float: left;
-    width: 48%;
-    margin: 1%;
-    padding: 20px;
-    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 /* IMATGES */
@@ -279,6 +330,48 @@ html, body{
     align-items: center;
 }
 
+.item4 {
+    animation: animacioCarta 3s forwards;
+}
+
+
+/* ANIMACIÓ EXERCICI 2
+   Aplicada a un element de la carta
+   4 frames + 3 propietats:
+   - opacity
+   - transform
+   - background-color
+*/
+@keyframes animacioCarta {
+
+    /* Inici invisible i desplaçat */
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+        background-color: #000;
+    }
+
+    /* Comença a aparèixer */
+    30% {
+        opacity: 0.3;
+        transform: translateY(20px);
+        background-color: #333;
+    }
+
+    /* Quasi visible */
+    70% {
+        opacity: 0.8;
+        transform: translateY(5px);
+        background-color: #777;
+    }
+
+    /* Estat final */
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        background-color: #f0f0f0;
+    }
+}
 /* GALERIA */
 .galeria-container {
     display: flex;
@@ -297,6 +390,25 @@ html, body{
     box-sizing: border-box;
     transition: 0.3s;
 }
+/* CONTENIDOR DE LA IMATGE */
+/* Overflow ocult per evitar que la imatge sobresurti */
+.galeria-item {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* IMATGE DE LA GALERIA */
+.galeria-item img {
+    /* Transició suau */
+    transition: transform 0.5s, filter 0.5s;
+}
+
+/* EFECTE HOVER */
+/* Utilitza scale, rotate i grayscale */
+.galeria-item img:hover {
+    transform: scale(1.1) rotate(3deg);
+    filter: grayscale(100%);
+}
 
 /* EFECTE IMATGE FOSCA */
 .fosca {
@@ -307,6 +419,53 @@ html, body{
 .galeria-container img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
     filter: brightness(50%);
+}
+
+/* SECCIÓ VÍDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+.video-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* fosc transparent */
+    padding: 10px;
+
+    display: flex;
+    justify-content: flex-end; /* icones a la dreta */
+    align-items: center;
+}
+
+/* CONTENIDOR ICONES */
+.video-controls {
+    display: flex;
+    gap: 15px;
+}
+
+/* ICONES */
+.icon {
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 28px;
+}
+
+/* HOVER EFECTE */
+.icon:hover {
+    text-shadow: 0 0 10px white;
+    transform: scale(1.2);
 }
 
 /* FORMULARI DE RESERVA */
@@ -375,8 +534,200 @@ button {
     transition: 0.3s;
 }
 
-/* HOVER BOTÓ */
+/* TRANSICIÓ EXTRA */
+/* Aquesta transició utilitza:
+   - background-color
+   - transform
+   - letter-spacing
+*/
+button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+
+    transition:
+        background-color 0.4s,
+        transform 0.4s,
+        letter-spacing 0.4s;
+}
+
+/* EFECTE HOVER DEL BOTÓ */
 button:hover {
-    background-color: #c59d5f;
-    color: black;
+    background-color: crimson;
+    transform: scale(1.05);
+    letter-spacing: 2px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+
+    /* Peu de pàgina centrat en pantalles mitjanes */
+    .footer {
+        justify-content: center; /* Centra els elements horitzontalment */
+        text-align: center; /* Centra el text */
+    }
+
+    /* Part esquerra del footer: centrat i amb salts de línia */
+    .footer-left {
+        justify-content: center;
+        flex-wrap: wrap; /* Permet que els elements baixin de línia */
+    }
+
+    /* Oculta el logo del footer en dispositius petits */
+    .logo-footer {
+        display: none;
+    }
+
+    /* Galeria: dues imatges per fila aproximadament */
+    .galeria-container img {
+        width: calc((100% - 15px) / 2);
+    }
+
+    /* Menú centrat en tablets */
+    .menu {
+        justify-content: center;
+    }
+
+    /* Text sobre la imatge principal centrat */
+    .center,
+    .center2,
+    .center3 {
+        left: 50%;
+        text-align: center;
+        width: 80%;
+    }
+
+    /* Ajust de mida i posició dels textos del header */
+    .center {
+        font-size: 1.5em;
+        top: 40%;
+    }
+
+    .center2 {
+        font-size: 2.2em;
+        top: 50%;
+    }
+
+    .center3 {
+        font-size: 1em;
+        top: 60%;
+    }
+
+    /* Primera caixa en format columna (imatge + text vertical) */
+    .box:first-of-type {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Imatge de la primera caixa a amplada completa */
+    .box:first-of-type img {
+        width: 100%;
+    }
+
+    /* Text de la primera caixa a amplada completa */
+    .box:first-of-type .texto1 {
+        width: 100%;
+    }
+
+    /* SECCIÓ CARTA: layout adaptat a 768px */
+    .carta {
+        grid-template-columns: repeat(6, 1fr); /* Configuració de columnes */
+        grid-template-areas:
+            "item1 item1 item1 item1"
+            "item2 item3 item3 item3"
+            "item2 item4 item4 item4"
+            "item2 item5 item5 item5"
+            "item6 item7 item7 item7"
+            "item6 item8 item8 item8"
+            "item6 item9 item9 item9";
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+}
+@media (max-width: 576px) {
+
+    /* Galeria: una imatge per fila */
+    .galeria-container img {
+        width: 100%;
+    }
+
+    /* Menú en columna (estil mòbil) */
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Amaga els textos del header en mòbil */
+    .center, .center2, .center3 {
+        display: none;
+    }
+
+    /* Cada box ocupa tota l’amplada */
+    .box {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Textos a mida més petita */
+    .texto1,
+    .texto2 {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    /* Imatge de la box adaptada */
+    .box img {
+        width: 100%;
+    }
+
+    /* Inverteix ordre de la segona box (imatge a dalt) */
+    .box:nth-of-type(2) img {
+        order: -1;
+    }
+
+    /* Oculta el títol de la carta */
+    .item1 {
+        display: none;
+    }
+
+    /* CARTA: tot en una sola columna */
+    .carta {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7"
+            "item8"
+            "item9";
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Contenidor de les imatges de la carta a amplada completa */
+    .container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Imatge dins la carta a mida completa */
+    .imagecarta {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Assegura que aquestes caixes ocupin tota l’amplada */
+    .item4, .item5, .item8, .item9 {
+        width: 100%;
+    }
 }
