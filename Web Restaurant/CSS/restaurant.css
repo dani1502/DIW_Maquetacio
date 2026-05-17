@@ -73,6 +73,59 @@ html, body{
     font-size: 1.2em;
     color: #ffffff;
 }
+/* ANIMACIONS DELS TEXTOS DE LA CAPÇALERA */
+
+/* Primer text */
+.center {
+    animation: animacioText 2s forwards;
+}
+
+/* Títol principal */
+.center2 {
+    animation: animacioText 3s forwards;
+}
+
+/* Subtítol */
+.center3 {
+    animation: animacioText 4s forwards;
+}
+
+/* KEYFRAMES */
+/* L'animació:
+   - el text apareix progressivament
+   - puja cap amunt
+   - canvia de taronja a blanc
+*/
+@keyframes animacioText {
+
+    /* Inicialment invisible */
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+        color: orange;
+    }
+
+    /* El text comença a aparèixer */
+    30% {
+        opacity: 0.4;
+        transform: translate(-50%, 0px);
+        color: #ffb347;
+    }
+
+    /* Continua pujant i canviant color */
+    70% {
+        opacity: 0.8;
+        transform: translate(-50%, -10px);
+        color: #ffd27f;
+    }
+
+    /* Estat final */
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -20px);
+        color: white;
+    }
+}
 
 /* CONTINGUT PRINCIPAL */
 .main {
@@ -277,6 +330,48 @@ html, body{
     align-items: center;
 }
 
+.item4 {
+    animation: animacioCarta 3s forwards;
+}
+
+
+/* ANIMACIÓ EXERCICI 2
+   Aplicada a un element de la carta
+   4 frames + 3 propietats:
+   - opacity
+   - transform
+   - background-color
+*/
+@keyframes animacioCarta {
+
+    /* Inici invisible i desplaçat */
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+        background-color: #000;
+    }
+
+    /* Comença a aparèixer */
+    30% {
+        opacity: 0.3;
+        transform: translateY(20px);
+        background-color: #333;
+    }
+
+    /* Quasi visible */
+    70% {
+        opacity: 0.8;
+        transform: translateY(5px);
+        background-color: #777;
+    }
+
+    /* Estat final */
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+        background-color: #f0f0f0;
+    }
+}
 /* GALERIA */
 .galeria-container {
     display: flex;
@@ -295,6 +390,25 @@ html, body{
     box-sizing: border-box;
     transition: 0.3s;
 }
+/* CONTENIDOR DE LA IMATGE */
+/* Overflow ocult per evitar que la imatge sobresurti */
+.galeria-item {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* IMATGE DE LA GALERIA */
+.galeria-item img {
+    /* Transició suau */
+    transition: transform 0.5s, filter 0.5s;
+}
+
+/* EFECTE HOVER */
+/* Utilitza scale, rotate i grayscale */
+.galeria-item img:hover {
+    transform: scale(1.1) rotate(3deg);
+    filter: grayscale(100%);
+}
 
 /* EFECTE IMATGE FOSCA */
 .fosca {
@@ -305,6 +419,53 @@ html, body{
 .galeria-container img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
     filter: brightness(50%);
+}
+
+/* SECCIÓ VÍDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+.video-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* fosc transparent */
+    padding: 10px;
+
+    display: flex;
+    justify-content: flex-end; /* icones a la dreta */
+    align-items: center;
+}
+
+/* CONTENIDOR ICONES */
+.video-controls {
+    display: flex;
+    gap: 15px;
+}
+
+/* ICONES */
+.icon {
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 28px;
+}
+
+/* HOVER EFECTE */
+.icon:hover {
+    text-shadow: 0 0 10px white;
+    transform: scale(1.2);
 }
 
 /* FORMULARI DE RESERVA */
@@ -373,10 +534,28 @@ button {
     transition: 0.3s;
 }
 
-/* HOVER BOTÓ */
+/* TRANSICIÓ EXTRA */
+/* Aquesta transició utilitza:
+   - background-color
+   - transform
+   - letter-spacing
+*/
+button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+
+    transition:
+        background-color 0.4s,
+        transform 0.4s,
+        letter-spacing 0.4s;
+}
+
+/* EFECTE HOVER DEL BOTÓ */
 button:hover {
-    background-color: #c59d5f;
-    color: black;
+    background-color: crimson;
+    transform: scale(1.05);
+    letter-spacing: 2px;
 }
 
 /* MEDIA QUERIES */

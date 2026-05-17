@@ -17,6 +17,8 @@
 
     <title>Restaurant els Coberts</title>
     <!-- Títol de la pàgina -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Enllaç al fitxer de fonts per a les icones de Material Icons --> 
 </head>
 
 <body>
@@ -117,18 +119,78 @@
 
             <div class="galeria-container">
                 <!-- Imatges, algunes amb classe "fosca" per efecte visual -->
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca">
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida">
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida">
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca">
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca">
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida">
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida">
-                <img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca">
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca"></div>
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida"></div>
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida"></div>
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca"></div>
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca"></div>
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida"></div>
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida"></div>
+                <div class="galeria-item"><img src="../IMG/amanida.jpg" alt="Plat d'amanida" class="fosca"></div>
             </div>
         </section>
 
     </main>
+
+    <!-- SECCIÓ DE VÍDEO -->
+    <section class="video-section">
+        <p class="titol">Vídeo del restaurant</p>
+
+        <div class="video-container">
+            <video id="video" muted>
+                <source src="../VIDEO/restaurant.mp4" type="video/mp4">
+                El teu navegador no suporta el vídeo.
+            </video>
+            <!-- BARRA SUPERIOR -->
+            <div class="video-bar">
+                <!-- CONTROLS PERSONALITZATS -->
+                <div class="video-controls">
+
+                    <span class="material-icons icon" onclick="playVideo()">play_circle</span>
+                    <span class="material-icons icon" onclick="pauseVideo()">pause_circle</span>
+                    <span class="material-icons icon" onclick="unmuteVideo()">volume_up</span>
+                    <span class="material-icons icon" onclick="muteVideo()">volume_off</span>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const video = document.getElementById("video"); // Obtenim l'element de vídeo
+
+        function playVideo() {
+            video.play();
+        }
+
+        function pauseVideo() {
+            video.pause();
+        }
+
+        function muteVideo() {
+            video.muted = true;
+        }
+
+        function unmuteVideo() {
+            video.muted = false;
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+
+                // Si el vídeo entra a la pantalla
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+
+            });
+        }, {
+            threshold: 0.5 // quan el 50% del vídeo és visible
+        });
+
+        /* Activem l’observador */
+        observer.observe(video);
+    </script>
 
     <!-- SECCIÓ DE RESERVA -->
     <section class="reserva">
